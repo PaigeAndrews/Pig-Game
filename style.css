@@ -134,14 +134,16 @@ h1{
 }
 
 .playAgainButton{
-    padding: 0px 7px 7px 7px;
+    padding: 0px 10px 7px 10px;
     display: inline;
 }
 
 .playAgainButtonStyle{
-    width: 7rem;
-    height: 3.5rem;
+    /* width: 7rem;
+    height: 3.5rem; */
+    font-size: 5vh;
 }
+
 .buttonOptions:hover{
     background-color:#276583;
     color: white;
@@ -184,10 +186,14 @@ h1{
     text-align: center;
 }
 
+#winLose{
+    margin: 3vh 0 3vh 0;
+}
+
 .playAgain{
   justify-content: center;
   align-self: center;
-  margin-top: 9vh;
+  /* margin-top: 9vh; */
 }
 
 .signature{
@@ -232,6 +238,9 @@ h1{
         height: 3.5rem;
         padding-top: 11px;
         font-size: 2rem;
+    }
+    .playAgainButtonStyle{
+        font-size: 6vh;
     }
     
 }

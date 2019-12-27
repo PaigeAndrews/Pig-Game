@@ -11,6 +11,7 @@ let computerIcon = document.querySelector("#computerIcon")
 let bottomContainer = document.querySelector(".bottomContainer")
 let playAgain = document.querySelector("#playAgainContainer")
 let playAgainButton = document.querySelector("#playAgainButton")
+let winLose = document.querySelector("#winLose")
 
 // the sites images: the main icon of robot and player and red eyes signifying whose turn is current
 let mainPictures = ["images/human.png", "images/human3.png", "images/robot-face-6-1074719.png",
@@ -56,7 +57,9 @@ function playerTurn(){
             if (playerScore + roundScore >= 100){
                 bottomContainer.style.display = "none";
                 playAgain.style.display = "block";
-                alert("You win!")
+                playerScore += roundScore
+                playerTotalScoreDisplay.innerHTML = playerScore
+                winLose.innerHTML = "You win!"
             }
             playerRoundScoreDisplay.innerHTML = roundScore  
             console.log("Player round score: " + roundScore);
@@ -92,7 +95,7 @@ function computerTurn(){
             if (computerScore + roundScore >= 100){
                 bottomContainer.style.display = "none";
                 playAgain.style.display = "block";
-                alert("You lose!")
+                winLose.innerHTML = "You Lose!"
                 break
             }
         } else {
@@ -102,9 +105,9 @@ function computerTurn(){
         }
 
         if (roundScore > 14){
-            if (computerScore + roundScore >= 100){
-            alert("You lose!")
-            }
+            // if (computerScore + roundScore >= 100){
+            // alert("You lose!")
+            // }
            
             console.log(computerScore + "computer score");
             console.log(roundScore + "computer round score");
