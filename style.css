@@ -1,0 +1,238 @@
+html{
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Baloo Bhai', cursive;
+}
+
+.headerContainer{
+    width: 100%;
+    height: 70vh;
+}
+
+.playerContainer{   
+    background-color: rgb(100,160,189);
+    width: 50%;
+    height:70vh;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    float: left;
+    align-items: flex-start;
+}
+
+.computerContainer{ 
+    background-color: rgb(137,172,189);
+    width: 50%;
+    height:70vh;
+    margin: 0;
+    padding: 0; 
+    display: inline-flex;
+    justify-content: center;
+    float: left;
+    align-items: flex-start;
+} 
+
+.secondContainer{
+    display: block;
+}
+
+.Icon{
+    padding: 0;
+    width: 15vh;
+    height:auto;
+    text-align: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 4vh;
+    color: white;
+    text-align: center;
+    margin: 0px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.totalScore{
+    font-size: 6vh;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+    padding: 0px;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+
+.dice{
+    width: 10vh;
+    height:auto;
+}
+
+.redButton{
+    color:black;
+    background-color: #F85252;
+    text-align: center;
+    margin: 15px 0px;
+    margin-bottom: 5vh;
+    padding: 9px;
+    padding-bottom: 0px;
+    border: none;
+    border-radius: 7px;
+    font-size: 3vh;
+}
+
+.roundScore{
+    margin: 5px 0px;
+}
+
+.bottomContainer{
+    width:100%;
+    height: 27vh;
+    background-color: #276583;
+    overflow: hidden; 
+}
+
+.rollAgainContainer{
+    background-color: #276583;
+    width:100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+ .holdContainer{
+    height: 50%;
+    display: flex;
+    background-color: #276583;
+    width:100%;
+    justify-content: center;
+ }
+
+.buttonOptions{
+    background-color:white;
+    color:#276583;
+    font-size: 1rem;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 7px;
+    text-align: center;
+    margin-top: 4vh;
+    box-shadow: 2px 2px 4px #000000;
+    padding-top: 7px;
+    transition: 0.5s;
+}
+
+.playAgainButton{
+    padding: 0px 7px 7px 7px;
+    display: inline;
+}
+
+.playAgainButtonStyle{
+    width: 7rem;
+    height: 3.5rem;
+}
+.buttonOptions:hover{
+    background-color:#276583;
+    color: white;
+    cursor: pointer;
+}
+
+.buttonOptions:active{
+    background-color:#276583;
+    color: white;
+    -webkit-transition: all 2s ease;  
+    -moz-transition: all 2s ease;  
+    -o-transition: all 2s ease;  
+    -ms-transition: all 2s ease;  
+    transition: all 2s ease;
+    height:2.5rem;
+    width:5.5rem;
+    font-size: 1.5rem;
+}
+
+.rollAgainIcon{
+    width: auto;
+    height: 10vh;
+    padding: 2vh;
+}
+
+
+.handIcon{
+    padding: 2vh 3vh 2vh 3vh;
+    width: auto;
+    height: 8vh;
+}
+
+#playAgainContainer{
+    display: none;
+    width:100%;
+    height: 27vh;
+    background-color: #276583;
+    color: white;
+    overflow: hidden; 
+    text-align: center;
+}
+
+.playAgain{
+  justify-content: center;
+  align-self: center;
+  margin-top: 9vh;
+}
+
+.signature{
+    width: 100%;
+    height: 3vh;
+    background-color: black;
+}
+
+.paige{
+    color: white;
+    font-size: 1.5vh;
+    padding-top: 0.5vh;
+    padding-left: 1vw;
+}
+
+
+@media screen and (min-width:765px){
+    .rollAgainContainer{
+        display: inline-flex;
+        float: left;
+        align-items: center;
+        width: 50vw;
+        height: 27vh;
+    }
+    .holdContainer{
+        display: inline-flex;
+        float: left;
+        align-items: center;
+        width: 50vw;
+        height: 27vh;
+    }
+    .rollAgainIcon{
+        width: auto;
+        height: 17vh;
+    }
+    .handIcon{
+        width: auto;
+        height: 12vh;
+    }
+    .buttonOptions{
+        width: 10rem;
+        height: 3.5rem;
+        padding-top: 11px;
+        font-size: 2rem;
+    }
+    
+}
+
