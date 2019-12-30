@@ -85,20 +85,32 @@ function computerTurn(){
     while (rollAgain == "yes"){
 
        
-        die = (Math.floor(Math.random() * 6) + 1 )
-        computerDiceImage.src = dicePictures[die - 1]
-        console.log(die + " computer die roll")
+        computerDie = (Math.floor(Math.random() * 6) + 1 )
+        setInterval(function() {
+            computerDiceImage.src = dicePictures[computerDie - 1]
+      }, 3000);
+        
+        console.log(`The computer rolled a ${computerDie}`)
     
-        if (die != 1){
-            roundScore += die
+        if (computerDie != 1){
+            setInterval(function() {
+                computerDiceImage.src = dicePictures[computerDie - 1]}, 3000);
+                roundScore += computerDie
             computerRoundScoreDisplay.innerHTML = roundScore
             if (computerScore + roundScore >= 100){
                 bottomContainer.style.display = "none";
                 playAgain.style.display = "block";
                 winLose.innerHTML = "You Lose!"
-                break
+                //    break
+                rollAgain = "no"
             }
+          
+            
+            
         } else {
+            setInterval(function() {
+                computerDiceImage.src = dicePictures[computerDie - 1]
+          }, 3000);
             roundScore = 0
             computerRoundScoreDisplay.innerHTML = roundScore
             rollAgain = "no"
@@ -129,10 +141,9 @@ function computerTurn(){
 
 // myVar = setInterval(function(){ alert("Hello"); }, 5000);
 // clearInterval(myVar);
-// TO DO
 // -Change eyes for Icons 
-// -play again button make it work
-// -change win/lose alert
 // -change timing for computer rolls 
 // -fix design
+//change image names
+//add read me with rules and info and screen shot and add the link to it
 

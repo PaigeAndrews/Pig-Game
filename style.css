@@ -139,8 +139,6 @@ h1{
 }
 
 .playAgainButtonStyle{
-    /* width: 7rem;
-    height: 3.5rem; */
     font-size: 5vh;
 }
 
@@ -188,6 +186,7 @@ h1{
 
 #winLose{
     margin: 3vh 0 3vh 0;
+    font-size: 4.5vh;
 }
 
 .playAgain{
