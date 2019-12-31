@@ -77,6 +77,8 @@ function playerTurn(){
 
 // Controls the logic when it is the player's turn
 function computerTurn(){
+    rollButton.disabled = true;
+    holdButton.disabled = true;
     roundScore = 0
     playerIcon.src = mainPictures[0]
     computerIcon.src = mainPictures[3]
@@ -84,17 +86,27 @@ function computerTurn(){
 
     while (rollAgain == "yes"){
 
+        function pause(milliseconds) {
+            var dt = new Date();
+            while ((new Date()) - dt <= milliseconds) { /* Do nothing */ }
+        }
+
        
         computerDie = (Math.floor(Math.random() * 6) + 1 )
         setTimeout(function() {
             computerDiceImage.src = dicePictures[computerDie - 1]
-      }, 3000);
+      }, 2000);
         
+      pause(3000);
         console.log(`The computer rolled a ${computerDie}`)
         
         if (computerDie != 1){
+            
             setTimeout(function() {
-                computerDiceImage.src = dicePictures[computerDie - 1]}, 3000);
+                computerDiceImage.src = dicePictures[computerDie - 1]
+          }, 2000);
+          pause(3000);
+
                 roundScore += computerDie
             computerRoundScoreDisplay.innerHTML = roundScore
             if (computerScore + roundScore >= 100){
@@ -108,9 +120,12 @@ function computerTurn(){
             
             
         } else {
+            
             setTimeout(function() {
                 computerDiceImage.src = dicePictures[computerDie - 1]
-          }, 3000);
+          }, 2000);
+          pause(3000);
+          
             roundScore = 0
             computerRoundScoreDisplay.innerHTML = roundScore
             rollAgain = "no"
