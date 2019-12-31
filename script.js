@@ -86,14 +86,14 @@ function computerTurn(){
 
        
         computerDie = (Math.floor(Math.random() * 6) + 1 )
-        setInterval(function() {
+        setTimeout(function() {
             computerDiceImage.src = dicePictures[computerDie - 1]
       }, 3000);
         
         console.log(`The computer rolled a ${computerDie}`)
-    
+        
         if (computerDie != 1){
-            setInterval(function() {
+            setTimeout(function() {
                 computerDiceImage.src = dicePictures[computerDie - 1]}, 3000);
                 roundScore += computerDie
             computerRoundScoreDisplay.innerHTML = roundScore
@@ -108,7 +108,7 @@ function computerTurn(){
             
             
         } else {
-            setInterval(function() {
+            setTimeout(function() {
                 computerDiceImage.src = dicePictures[computerDie - 1]
           }, 3000);
             roundScore = 0
