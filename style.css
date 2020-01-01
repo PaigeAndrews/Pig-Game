@@ -85,7 +85,8 @@ h1{
 
 .redButton{
     color:black;
-    background-color: #F85252;
+    /* background-color: #F85252; */
+    background-color: #ff8080;
     text-align: center;
     margin: 15px 0px;
     margin-bottom: 5vh;

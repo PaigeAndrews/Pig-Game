@@ -43,6 +43,12 @@ roundScore = 0;
 die = null;
 rollAgain = null;
 
+// function pause(milliseconds) {
+//     var dt = new Date();
+//     while ((new Date()) - dt <= milliseconds) { /* Do nothing */ }
+// }
+
+
 
 // Controls the logic when it is the player's turn
 function playerTurn(){
@@ -74,6 +80,14 @@ function playerTurn(){
     console.log(roundScore + "player round score");      
 };
 
+// function wait(ms) {
+//     var start = Date.now(),
+//         now = start;
+//     while (now - start < ms) {
+//       now = Date.now();
+//     }
+// }
+
 
 // Controls the logic when it is the player's turn
 function computerTurn(){
@@ -84,30 +98,18 @@ function computerTurn(){
     computerIcon.src = mainPictures[3]
     rollAgain = "yes"
 
+                  
+              
     while (rollAgain == "yes"){
 
-        function pause(milliseconds) {
-            var dt = new Date();
-            while ((new Date()) - dt <= milliseconds) { /* Do nothing */ }
-        }
-
-       
         computerDie = (Math.floor(Math.random() * 6) + 1 )
-        setTimeout(function() {
-            computerDiceImage.src = dicePictures[computerDie - 1]
-      }, 2000);
         
-      pause(3000);
         console.log(`The computer rolled a ${computerDie}`)
         
         if (computerDie != 1){
-            
-            setTimeout(function() {
-                computerDiceImage.src = dicePictures[computerDie - 1]
-          }, 2000);
-          pause(3000);
-
-                roundScore += computerDie
+            console.log("1 test")
+            computerDiceImage.src = dicePictures[computerDie - 1]
+            roundScore += computerDie
             computerRoundScoreDisplay.innerHTML = roundScore
             if (computerScore + roundScore >= 100){
                 bottomContainer.style.display = "none";
@@ -116,32 +118,28 @@ function computerTurn(){
                 //    break
                 rollAgain = "no"
             }
-          
-            
-            
         } else {
-            
-            setTimeout(function() {
-                computerDiceImage.src = dicePictures[computerDie - 1]
-          }, 2000);
-          pause(3000);
-          
+            computerDiceImage.src = dicePictures[computerDie - 1]
             roundScore = 0
             computerRoundScoreDisplay.innerHTML = roundScore
             rollAgain = "no"
         }
 
         if (roundScore > 14){
-            // if (computerScore + roundScore >= 100){
-            // alert("You lose!")
-            // }
-           
             console.log(computerScore + "computer score");
             console.log(roundScore + "computer round score");
             rollAgain = "no"
         } 
+        // setTimeout(function() {
+        //             computerDiceImage.src = dicePictures[computerDie - 1]
+        //       }, 2000);
 
+        // pause(2000)
+        // wait(2000)
     }
+    
+    
+    console.log("Went too far")
     computerScore += roundScore
     computerTotalScoreDisplay.innerHTML = computerScore
     roundScore = 0
@@ -154,8 +152,7 @@ function computerTurn(){
 };
 
 
-// myVar = setInterval(function(){ alert("Hello"); }, 5000);
-// clearInterval(myVar);
+
 // -Change eyes for Icons 
 // -change timing for computer rolls 
 // -fix design
