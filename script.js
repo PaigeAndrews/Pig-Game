@@ -14,8 +14,8 @@ let playAgainButton = document.querySelector("#playAgainButton")
 let winLose = document.querySelector("#winLose")
 
 // the sites images: the main icon of robot and player and red eyes signifying whose turn is current
-let mainPictures = ["images/human.png", "images/human3.png", "images/robot-face-6-1074719.png",
-"images/robot3.png"];
+let mainPictures = ["images/human.png", "images/humanRedEyes.png", "images/robot-face.png",
+"images/robotRedEyes.png"];
 
 // the site images: each face of the die 
 let dicePictures = ["images/die1.png", "images/2.png", "images/3.png",
@@ -33,6 +33,7 @@ holdButton.addEventListener("click", function(){
     computerTurn()
 });
 
+// reload page upon clicking play again button
 playAgainButton.addEventListener("click", function(){
     window.location.reload();
 });
@@ -42,12 +43,6 @@ computerScore = 0;
 roundScore = 0;
 die = null;
 rollAgain = null;
-
-// function pause(milliseconds) {
-//     var dt = new Date();
-//     while ((new Date()) - dt <= milliseconds) { /* Do nothing */ }
-// }
-
 
 
 // Controls the logic when it is the player's turn
@@ -80,17 +75,36 @@ function playerTurn(){
     console.log(roundScore + "player round score");      
 };
 
-// function wait(ms) {
-//     var start = Date.now(),
-//         now = start;
-//     while (now - start < ms) {
-//       now = Date.now();
-//     }
-// }
+// The computer turns logic that is set by timer in computerTurn function
+function loopThrough(){
+    computerDie = (Math.floor(Math.random() * 6) + 1 )
+    console.log(`The computer rolled a ${computerDie}`)
+    if (computerDie != 1){
+        console.log("1 test")
+        computerDiceImage.src = dicePictures[computerDie - 1]
+        roundScore += computerDie
+        computerRoundScoreDisplay.innerHTML = roundScore
+        if (computerScore + roundScore >= 100){
+            bottomContainer.style.display = "none";
+            playAgain.style.display = "block";
+            winLose.innerHTML = "You Lose!"
+            rollAgain = "no"
+        }
+    } else {
+        computerDiceImage.src = dicePictures[computerDie - 1]
+        roundScore = 0
+        computerRoundScoreDisplay.innerHTML = roundScore
+        rollAgain = "no"
+    }
 
-
-// Controls the logic when it is the player's turn
-function computerTurn(){
+    if (roundScore > 14){
+        console.log(computerScore + "computer score");
+        console.log(roundScore + "computer round score");
+        rollAgain = "no"
+    } 
+}
+// Computers turn logic that goes to loopThrough function, then continues here to add ending score and finishes his turn
+async function computerTurn(){
     rollButton.disabled = true;
     holdButton.disabled = true;
     roundScore = 0
@@ -98,48 +112,12 @@ function computerTurn(){
     computerIcon.src = mainPictures[3]
     rollAgain = "yes"
 
-                  
-              
     while (rollAgain == "yes"){
-
-        computerDie = (Math.floor(Math.random() * 6) + 1 )
-        
-        console.log(`The computer rolled a ${computerDie}`)
-        
-        if (computerDie != 1){
-            console.log("1 test")
-            computerDiceImage.src = dicePictures[computerDie - 1]
-            roundScore += computerDie
-            computerRoundScoreDisplay.innerHTML = roundScore
-            if (computerScore + roundScore >= 100){
-                bottomContainer.style.display = "none";
-                playAgain.style.display = "block";
-                winLose.innerHTML = "You Lose!"
-                //    break
-                rollAgain = "no"
-            }
-        } else {
-            computerDiceImage.src = dicePictures[computerDie - 1]
-            roundScore = 0
-            computerRoundScoreDisplay.innerHTML = roundScore
-            rollAgain = "no"
-        }
-
-        if (roundScore > 14){
-            console.log(computerScore + "computer score");
-            console.log(roundScore + "computer round score");
-            rollAgain = "no"
-        } 
-        // setTimeout(function() {
-        //             computerDiceImage.src = dicePictures[computerDie - 1]
-        //       }, 2000);
-
-        // pause(2000)
-        // wait(2000)
+        loopThrough()
+        console.log("looped")
+        await new Promise(resolve => setTimeout(resolve, 2000))
     }
     
-    
-    console.log("Went too far")
     computerScore += roundScore
     computerTotalScoreDisplay.innerHTML = computerScore
     roundScore = 0
@@ -148,14 +126,10 @@ function computerTurn(){
     console.log(roundScore + "computer round score"); 
     playerIcon.src = mainPictures[1]
     computerIcon.src = mainPictures[2]
-
 };
 
 
 
-// -Change eyes for Icons 
-// -change timing for computer rolls 
-// -fix design
-//change image names
-//add read me with rules and info and screen shot and add the link to it
 
+//fix buttons not being disabled upon computers turn
+//add read me with rules and info and screen shot and add the link to it
