@@ -1,6 +1,7 @@
 # Pig Game
-The dice game "pig" made in javascript, css, and html
 ___
+The dice game "pig" made in javascript, css, and html
+
 ### Pig Game Rules
 ___
 Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
