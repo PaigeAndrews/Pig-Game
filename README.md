@@ -1,4 +1,4 @@
-# Pig-Game
+# Pig Game
 The dice game "pig" made in javascript, css, and html
 ___
 ### Pig Game Rules
