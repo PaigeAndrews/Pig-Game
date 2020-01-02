@@ -50,7 +50,6 @@ function playerTurn(){
     
         die = (Math.floor(Math.random() * 6) + 1 )
         playerDiceImage.src = dicePictures[die - 1]
-        console.log(`The player rolled a ${die}`)
 
         if (die != 1){
             roundScore += die
@@ -62,25 +61,18 @@ function playerTurn(){
                 playerTotalScoreDisplay.innerHTML = playerScore
                 winLose.innerHTML = "You win!"
             }
-            playerRoundScoreDisplay.innerHTML = roundScore  
-            console.log("Player round score: " + roundScore);
+            playerRoundScoreDisplay.innerHTML = roundScore
         } else {
             roundScore = 0
             playerRoundScoreDisplay.innerHTML = roundScore
-            console.log("Player turn over")
             computerTurn()            
-        }
-
-    console.log(playerScore + "player score");
-    console.log(roundScore + "player round score");      
+        }     
 };
 
 // The computer turns logic that is set by timer in computerTurn function
 function loopThrough(){
     computerDie = (Math.floor(Math.random() * 6) + 1 )
-    console.log(`The computer rolled a ${computerDie}`)
     if (computerDie != 1){
-        console.log("1 test")
         computerDiceImage.src = dicePictures[computerDie - 1]
         roundScore += computerDie
         computerRoundScoreDisplay.innerHTML = roundScore
@@ -98,15 +90,13 @@ function loopThrough(){
     }
 
     if (roundScore > 14){
-        console.log(computerScore + "computer score");
-        console.log(roundScore + "computer round score");
         rollAgain = "no"
     } 
 }
 // Computers turn logic that goes to loopThrough function, then continues here to add ending score and finishes his turn
 async function computerTurn(){
-    rollButton.disabled = true;
-    holdButton.disabled = true;
+    rollButton.style.pointerEvents = 'none';
+    holdButton.style.pointerEvents = 'none';
     roundScore = 0
     playerIcon.src = mainPictures[0]
     computerIcon.src = mainPictures[3]
@@ -114,7 +104,6 @@ async function computerTurn(){
 
     while (rollAgain == "yes"){
         loopThrough()
-        console.log("looped")
         await new Promise(resolve => setTimeout(resolve, 2000))
     }
     
@@ -122,14 +111,8 @@ async function computerTurn(){
     computerTotalScoreDisplay.innerHTML = computerScore
     roundScore = 0
     computerRoundScoreDisplay.innerHTML = roundScore
-    console.log(computerScore + "computer score");
-    console.log(roundScore + "computer round score"); 
     playerIcon.src = mainPictures[1]
     computerIcon.src = mainPictures[2]
+    rollButton.style.pointerEvents = 'auto';
+    holdButton.style.pointerEvents = 'auto';
 };
-
-
-
-
-//fix buttons not being disabled upon computers turn
-//add read me with rules and info and screen shot and add the link to it
