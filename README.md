@@ -12,7 +12,7 @@ Each turn, a player repeatedly rolls a die until either a 1 is rolled or the pla
 
 The first player to get a total score 100 or more points wins!  
 
-**Whomever's turn is active, thier eyes will glow red**
+**Whomever's turn is active, their eyes will glow red**
 
 ### Links
 ___
