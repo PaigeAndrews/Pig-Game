@@ -49,8 +49,8 @@ body{
 
 .Icon{
     padding: 0;
-    width: 15vh;
-    height:auto;
+    height: 15vh;
+    width: auto;
     text-align: center;
     justify-content: center;
 }
@@ -79,8 +79,9 @@ h1{
   }
 
 .dice{
-    width: 10vh;
-    height:auto;
+    height: 10vh;
+    width: auto;
+    
 }
 
 .redButton{
