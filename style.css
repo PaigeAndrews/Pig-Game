@@ -86,7 +86,6 @@ h1{
 
 .redButton{
     color:black;
-    /* background-color: #F85252; */
     background-color: #ff8080;
     text-align: center;
     margin: 15px 0px;
@@ -148,25 +147,6 @@ h1{
     font-size: 5vh;
 }
 
-.buttonOptions:hover{
-    background-color:#276583;
-    color: white;
-    cursor: pointer;
-}
-
-.buttonOptions:active{
-    background-color:#276583;
-    color: white;
-    -webkit-transition: all 2s ease;  
-    -moz-transition: all 2s ease;  
-    -o-transition: all 2s ease;  
-    -ms-transition: all 2s ease;  
-    transition: all 2s ease;
-    height:2.5rem;
-    width:5.5rem;
-    font-size: 1.5rem;
-}
-
 .rollAgainIcon{
     width: auto;
     height: 10vh;
@@ -198,7 +178,6 @@ h1{
 .playAgain{
   justify-content: center;
   align-self: center;
-  /* margin-top: 9vh; */
 }
 
 .signature{
@@ -213,7 +192,6 @@ h1{
     padding-top: 0.5vh;
     padding-left: 1vw;
 }
-
 
 @media screen and (min-width:765px){
     .rollAgainContainer{
@@ -247,6 +225,15 @@ h1{
     .playAgainButtonStyle{
         font-size: 6vh;
     }
-    
 }
+
+@media screen and (min-width: 1025px){
+    .buttonOptions:hover{
+        background-color:#276583;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+
 
