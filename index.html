@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
   </head>  
 <body>
+<!-- Top of main page container  -->
 <div class="headerContainer">
     <div class="playerContainer">
       <div class="secondContainer">
@@ -35,7 +36,7 @@
      </div>
     </div>
 </div>
-
+<!-- Bottom of page container holder the roll again and hold buttons -->
   <div class="bottomContainer">
     <div class="rollAgainContainer">
         <img src="images/question.png" class="questionIcon">
@@ -50,16 +51,15 @@
     </div>
     
   </div>
-
+<!-- When you win or lose this container pops up -->
   <div id="playAgainContainer">
     <div class="playAgain"><div id="winLose"></div> 
       <div id= "playAgainButton" class="buttonOptions playAgainButton playAgainButtonStyle">Play Again?</div>
     </div>
   </div>
 
+<!-- Modal content -->
   <div id="myModal" class="modal">
-
-      <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2 id="pigRules">Pig Game Rules</h2>
@@ -68,14 +68,13 @@
           <ul>
             <li>If the player rolls a 1, they score nothing and it becomes the computer's turn.</li>
             <li>If the player rolls any other number, it is added to their round score and the player's turn continues.</li>
-            <li>If a player chooses to "hold", their round score is added to their total score, and it becomes the next player's turn.</li>
+            <li>If a player chooses to "hold", their round score is added to their total score, and it becomes the computer's turn.</li>
           </ul>
         </div>
-        <p>The first player to get a total score 100 or more points wins!</p>
+        <p>The first player to get a total score of 100 or more points wins!</p>
         <p><b>Whomever's turn is active, their eyes will glow red</b></p>
       </div>
-    
-    </div>
+  </div>
     
 
   <div class="signature">

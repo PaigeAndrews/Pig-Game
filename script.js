@@ -13,12 +13,20 @@ let playAgain = document.querySelector("#playAgainContainer")
 let playAgainButton = document.querySelector("#playAgainButton")
 let winLose = document.querySelector("#winLose")
 let questionIcon = document.querySelector(".questionIcon")
-// Get the modal
-let modal = document.getElementById("myModal");
-
-
-// Get the <span> element that closes the modal
+let modal = document.getElementById("myModal")
 let span = document.getElementsByClassName("close")[0];
+
+
+// the sites images: the main icon of robot and player and red eyes signifying whose turn is current
+let mainPictures = ["images/human.png", "images/humanRedEyes.png", "images/robot-face.png",
+"images/robotRedEyes.png"];
+
+// the site images: each face of the die 
+let dicePictures = ["images/die1.png", "images/2.png", "images/3.png",
+"images/4.png", "images/5.png", "images/6.png"
+];
+
+
 
 // When the user clicks the button, open the modal 
 questionIcon.onclick = function() {
@@ -37,14 +45,6 @@ window.onclick = function(event) {
   }
 }
 
-// the sites images: the main icon of robot and player and red eyes signifying whose turn is current
-let mainPictures = ["images/human.png", "images/humanRedEyes.png", "images/robot-face.png",
-"images/robotRedEyes.png"];
-
-// the site images: each face of the die 
-let dicePictures = ["images/die1.png", "images/2.png", "images/3.png",
-"images/4.png", "images/5.png", "images/6.png"
-];
 
 // listening for a click on roll die button
 rollButton.addEventListener("click", playerTurn);
@@ -56,9 +56,6 @@ holdButton.addEventListener("click", function(){
     playerRoundScoreDisplay.innerHTML = 0
     computerTurn()
 });
-
-// //listening for click on question mark icon to display the rules
-// questionIcon.addEventListener("click",)
 
 
 // reload page upon clicking play again button
