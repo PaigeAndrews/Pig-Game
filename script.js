@@ -12,6 +12,30 @@ let bottomContainer = document.querySelector(".bottomContainer")
 let playAgain = document.querySelector("#playAgainContainer")
 let playAgainButton = document.querySelector("#playAgainButton")
 let winLose = document.querySelector("#winLose")
+let questionIcon = document.querySelector(".questionIcon")
+// Get the modal
+let modal = document.getElementById("myModal");
+
+
+// Get the <span> element that closes the modal
+let span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+questionIcon.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 // the sites images: the main icon of robot and player and red eyes signifying whose turn is current
 let mainPictures = ["images/human.png", "images/humanRedEyes.png", "images/robot-face.png",
@@ -32,6 +56,10 @@ holdButton.addEventListener("click", function(){
     playerRoundScoreDisplay.innerHTML = 0
     computerTurn()
 });
+
+// //listening for click on question mark icon to display the rules
+// questionIcon.addEventListener("click",)
+
 
 // reload page upon clicking play again button
 playAgainButton.addEventListener("click", function(){

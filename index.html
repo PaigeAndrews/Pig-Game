@@ -38,14 +38,13 @@
 
   <div class="bottomContainer">
     <div class="rollAgainContainer">
-        <img src="images/question.png" class="questionIcon" id="questionA">
+        <img src="images/question.png" class="questionIcon">
       <img src="images/5_glyph-512-.png" class="rollAgainIcon">
       <div id ="rollDie"class="buttonOptions">Roll Die</div>
     </div>
 
     
     <div class="holdContainer">
-        <!-- <img src="images/question.png" class="questionIcon" id="questionB"> -->
       <img src="images/hand2.png" class="handIcon">
       <div id="hold" class="buttonOptions">Hold</div>
     </div>
@@ -58,7 +57,30 @@
     </div>
   </div>
 
-    <div class="signature"><div class="paige">Paige Andrews 2019</div></div>
+  <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="pigRules">Pig Game Rules</h2>
+        <p>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":</p>
+        <div id="ulContainer">
+          <ul>
+            <li>If the player rolls a 1, they score nothing and it becomes the computer's turn.</li>
+            <li>If the player rolls any other number, it is added to their round score and the player's turn continues.</li>
+            <li>If a player chooses to "hold", their round score is added to their total score, and it becomes the next player's turn.</li>
+          </ul>
+        </div>
+        <p>The first player to get a total score 100 or more points wins!</p>
+        <p><b>Whomever's turn is active, their eyes will glow red</b></p>
+      </div>
+    
+    </div>
+    
+
+  <div class="signature">
+    <div class="paige">Paige Andrews 2019</div>
+  </div>
      <!-- import the webpage's javascript file -->
     <script src="script.js" defer></script>
 </body>
